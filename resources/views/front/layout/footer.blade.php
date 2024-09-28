@@ -4,83 +4,79 @@
         <!-- Outer-Footer -->
         <div class="outer-footer-wrapper u-s-p-y-80">
             <h6>
-                For special offers and other discount information
+                Para ofertas especiales y otra información de descuentos
             </h6>
             <h1>
-                Subscribe to our Newsletter
+                Suscríbete a Nuestro Boletín
             </h1>
             <p>
-                Subscribe to the mailing list to receive updates on promotions, new arrivals, discount and coupons.
+                Suscríbete a la lista de correo para recibir actualizaciones sobre promociones, nuevos llegados, descuentos y cupones.
             </p>
 
-
-
-            
             <form class="newsletter-form">
-                <label class="sr-only" for="subscriber_email">Enter your Email</label>
-                <input type="text" placeholder="Your Email Address" id="subscriber_email" name="subscriber_email" required> {{-- We'll use the HTML id Global Attribute in jQuery in front/js/custom.js --}} 
-                <button type="button" class="button" onclick="addSubscriber()">SUBMIT</button> {{-- Check the addSubscriber() function in front/js/custom.js. We'll use it in conjunction with the    id="subscriber_email"    of the <input> field --}}
+                <label class="sr-only" for="subscriber_email">Ingresa tu Email</label>
+                <input type="text" placeholder="Tu Dirección de Email" id="subscriber_email" name="subscriber_email" required> {{-- Usaremos el atributo id global de HTML en jQuery en front/js/custom.js --}} 
+                <button type="button" class="button" onclick="addSubscriber()">ENVIAR</button> {{-- Verifica la función addSubscriber() en front/js/custom.js. La utilizaremos junto con el id="subscriber_email" del campo <input> --}}
             </form>
-
-
 
         </div>
         <!-- Outer-Footer /- -->
+        
         <!-- Mid-Footer -->
         <div class="mid-footer-wrapper u-s-p-b-80">
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-12">
                     <div class="footer-list">
-                        <h6>COMPANY</h6>
+                        <h6>EMPRESA</h6>
                         <ul>
                             <li>
-                                <a href="{{ url('about-us') }}">About Us</a>
+                                <a href="{{ url('about-us') }}">Sobre Nosotros</a>
                             </li>
                             <li>
-                                <a href="{{ url('contact') }}">Contact Us</a>
+                                <a href="{{ url('contact') }}">Contáctanos</a>
                             </li>
                             <li>
-                                <a href="{{ url('faq') }}">FAQ</a>
+                                <a href="{{ url('faq') }}">Preguntas Frecuentes</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12">
                     <div class="footer-list">
-                        <h6>COLLECTION</h6>
+                        <h6>COLECCIÓN</h6>
                         <ul>
                             <li>
-                                <a href="{{ url('men') }}">Men Clothing</a>
+                                <a href="{{ url('men') }}">Ropa de Hombre</a>
                             </li>
                             <li>
-                                <a href="{{ url('women') }}">Women Clothing</a>
+                                <a href="{{ url('women') }}">Ropa de Mujer</a>
                             </li>
                             <li>
-                                <a href="{{ url('kids') }}">Kids Clothing</a>
+                                <a href="{{ url('kids') }}">Ropa de Niños</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12">
                     <div class="footer-list">
-                        <h6>ACCOUNT</h6>
+                        <h6>CUENTA</h6>
                         <ul>
                             <li>
-                                <a href="{{ url('user/account') }}">My Account</a>
+                                <a href="{{ url('user/account') }}">Mi Cuenta</a>
                             </li>
                             <li>
-                                <a href="{{ url('user/orders') }}">My Orders</a>
+                                <a href="{{ url('user/orders') }}">Mis Pedidos</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12">
                     <div class="footer-list">
-                        <h6>Contact</h6>
+                        <h6>Contacto</h6>
                         <ul>
                             <li>
                                 <i class="fas fa-location-arrow u-s-m-r-9"></i>
-                                <span>Multi-vendor E-commerce Application</span>
+                                <span>Aplicación de Comercio Electrónico Multivendedor</span>
                             </li>
                             <li>
                                 <a href="tel:+201255845857">
@@ -101,6 +97,7 @@
             </div>
         </div>
         <!-- Mid-Footer /- -->
+        
         <!-- Bottom-Footer -->
         <div class="bottom-footer-wrapper">
             <div class="social-media-wrapper">
@@ -142,8 +139,8 @@
                     </li>
                 </ul>
             </div>
-            <p class="copyright-text">Copyright &copy; 2022
-                <a target="_blank" rel="nofollow" href="#">Multi-vendor E-commerce Application</a> | All Right Reserved
+            <p class="copyright-text">Derechos UMSA &copy; 2024
+                <a target="_blank" rel="nofollow" href="#">Aplicación de Comercio Artesanal</a> | Todos los Derechos Reservados
             </p>
         </div>
     </div>

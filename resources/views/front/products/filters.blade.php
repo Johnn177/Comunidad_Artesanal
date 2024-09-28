@@ -11,9 +11,9 @@
 <div class="col-lg-3 col-md-3 col-sm-12">
     <!-- Fetch-Categories-from-Root-Category  -->
     <div class="fetch-categories">
-        <h3 class="title-name">Browse Categories</h3>
+        <h3 class="title-name">Explorar categorías</h3>
         <!-- Level 1 -->
-        <h3 class="fetch-mark-category">
+        <!-- <h3 class="fetch-mark-category">
             <a href="listing.html">T-Shirts
                 <span class="total-fetch-items">(5)</span>
             </a>
@@ -29,10 +29,10 @@
                     <span class="total-fetch-items">(2)</span>
                 </a>
             </li>
-        </ul>
+        </ul>-->
         <!-- //end Level 1 -->
         <!-- Level 2 -->
-        <h3 class="fetch-mark-category">
+        <!--<h3 class="fetch-mark-category">
             <a href="listing.html">Shirts
                 <span class="total-fetch-items">(5)</span>
             </a>
@@ -48,7 +48,7 @@
                     <span class="total-fetch-items">(2)</span>
                 </a>
             </li>
-        </ul>
+        </ul>-->
         <!-- //end Level 2 -->
     </div>
     <!-- Fetch-Categories-from-Root-Category  /- -->
