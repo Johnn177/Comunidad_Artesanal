@@ -43,16 +43,16 @@
                             @if ($getDiscountAttributePrice['discount'] > 0) {{-- Si hay un descuento en el precio, muestra el precio antes (el precio original) y después (el nuevo precio) del descuento --}}
                                 <div class="price-template">
                                     <div class="item-new-price">
-                                        EGP{{ $getDiscountAttributePrice['final_price'] }}
+                                        Bs. {{ $getDiscountAttributePrice['final_price'] }}
                                     </div>
                                     <div class="item-old-price" style="margin-left: -40px">
-                                        EGP{{ $getDiscountAttributePrice['product_price'] }}
+                                        Bs. {{ $getDiscountAttributePrice['product_price'] }}
                                     </div>
                                 </div>
                             @else {{-- si no hay descuento en el precio, muestra el precio original --}}
                                 <div class="price-template">
                                     <div class="item-new-price">
-                                        EGP{{ $getDiscountAttributePrice['final_price'] }}
+                                        Bs. {{ $getDiscountAttributePrice['final_price'] }}
                                     </div>
                                 </div>
                             @endif
@@ -69,7 +69,7 @@
                     </td>
                     <td>
                         <div class="cart-price">
-                            EGP{{ $getDiscountAttributePrice['final_price'] * $item['quantity'] }} {{-- precio de todos los productos (después del descuento (si lo hay)) (= precio (después del descuento) * cantidad de productos) --}}
+                            Bs. {{ $getDiscountAttributePrice['final_price'] * $item['quantity'] }} {{-- precio de todos los productos (después del descuento (si lo hay)) (= precio (después del descuento) * cantidad de productos) --}}
                         </div>
                     </td>
                     <td>
@@ -107,7 +107,7 @@
                         <h3 class="calc-h3 u-s-m-b-0">Subtotal</h3> {{-- Precio total antes de cualquier descuento de cupón --}}
                     </td>
                     <td>
-                        <span class="calc-text">EGP{{ $total_price }}</span>
+                        <span class="calc-text">Bs.{{ $total_price }}</span>
                     </td>
                 </tr>
                 <tr>
@@ -118,9 +118,9 @@
                         <span class="calc-text couponAmount"> {{-- Creamos la clase CSS 'couponAmount' para usarla como un manejador para AJAX dentro de $('#applyCoupon').submit(); función en front/js/custom.js --}}
                             
                             @if (\Illuminate\Support\Facades\Session::has('couponAmount')) {{-- Almacenamos el 'couponAmount' en una variable de sesión dentro del método applyCoupon() en Front/ProductsController.php --}}
-                                EGP{{ \Illuminate\Support\Facades\Session::get('couponAmount') }}
+                                Bs. {{ \Illuminate\Support\Facades\Session::get('couponAmount') }}
                             @else
-                                EGP0
+                                Bs. 0
                             @endif
                         </span>
                     </td>
@@ -130,7 +130,7 @@
                         <h3 class="calc-h3 u-s-m-b-0">Total General</h3> {{-- Precio total después de descuentos de cupón (si los hay) --}}
                     </td>
                     <td>
-                        <span class="calc-text grand_total">EGP{{ $total_price - \Illuminate\Support\Facades\Session::get('couponAmount') }}</span> {{-- Creamos la clase CSS 'grand_total' para usarla como un manejador para AJAX dentro de $('#applyCoupon').submit(); función en front/js/custom.js --}} {{-- Almacenamos el 'couponAmount' en una variable de sesión dentro del método applyCoupon() en Front/ProductsController.php --}}
+                        <span class="calc-text grand_total">Bs.{{ $total_price - \Illuminate\Support\Facades\Session::get('couponAmount') }}</span> {{-- Creamos la clase CSS 'grand_total' para usarla como un manejador para AJAX dentro de $('#applyCoupon').submit(); función en front/js/custom.js --}} {{-- Almacenamos el 'couponAmount' en una variable de sesión dentro del método applyCoupon() en Front/ProductsController.php --}}
                     </td>
                 </tr>
             </tbody>

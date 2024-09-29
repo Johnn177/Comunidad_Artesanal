@@ -494,7 +494,7 @@ class ProductsController extends Controller
                 }
             }
 
-            return redirect()->back()->with('success_message', 'Product Images have been added successfully!');
+            return redirect()->back()->with('success_message', '¡Las imágenes del producto se han agregado correctamente!');
         }
 
 

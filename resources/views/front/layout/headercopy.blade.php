@@ -89,7 +89,7 @@ $sections = \App\Models\Section::sections();
                         </ul>
                     </li>
                     <li>
-                        <a>EGP
+                        <a>Bs.
                         <i class="fas fa-chevron-down u-s-m-l-9"></i>
                         </a>
                         <ul class="g-dropdown" style="width:90px">
@@ -188,7 +188,7 @@ $sections = \App\Models\Section::sections();
         <div class="mini-cart-container">
             <div class="mini-cart-header">
                 <span class="mini-cart-title">Tu Carrito</span>
-                <span class="mini-cart-total">EGP <span class="mini-cart-total-price">{{ Cart::getTotal() }}</span></span> {{-- Usamos Cart::getTotal() para obtener el precio total --}} 
+                <span class="mini-cart-total">Bs. <span class="mini-cart-total-price">{{ Cart::getTotal() }}</span></span> {{-- Usamos Cart::getTotal() para obtener el precio total --}} 
                 <button class="close-mini-cart fas fa-times" id="close-mini-cart"></button>
             </div>
             <ul class="mini-cart-items">
@@ -206,7 +206,7 @@ $sections = \App\Models\Section::sections();
                             </div>
                             <div class="mini-cart-content">
                                 <a href="{{ url('product/' . $cartItem->id) }}">{{ $cartItem->name }}</a>
-                                <span class="mini-cart-price">EGP {{ $cartItem->price }}</span>
+                                <span class="mini-cart-price">Bs. {{ $cartItem->price }}</span>
                                 <div class="mini-cart-quantity">
                                     <input type="number" name="quantity" value="{{ $cartItem->quantity }}" min="1" step="1">
                                     <button class="button-update-cart fas fa-sync-alt" id="update-cart-item" data-id="{{ $cartItem->id }}"></button>

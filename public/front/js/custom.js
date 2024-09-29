@@ -78,11 +78,11 @@ $(document).ready(function() {
                 console.log(resp);
                 if (resp.discount > 0) { // if there's a discount    // this is the same as:    if (resp['discount'] > 0) {
                     $('.getAttributePrice').html(
-                        '<div class="price"><h4>EGP' + resp.final_price + '</h4></div><div class="original-price"><span>Original Price: </span><span>EGP' + resp.product_price + '</span></div>'
+                        '<div class="price"><h4>Bs.' + resp.final_price + '</h4></div><div class="original-price"><span>Original Price: </span><span>Bs.' + resp.product_price + '</span></div>'
                     ); // Note: resp.product_price    is the same as    resp['product_price']
                 } else { // if there's no discount
                     $('.getAttributePrice').html(
-                        '<div class="price"><h4>EGP' + resp.final_price + '</h4></div>'
+                        '<div class="price"><h4>Bs.' + resp.final_price + '</h4></div>'
                     ); // Note: resp.final_price    is the same as    resp['final_price']
                 }
             },
@@ -194,7 +194,7 @@ $(document).ready(function() {
 
 
         // return false; // DON'T SUBMIT THE FORM!!
-
+            console.log('llego ',formdata);
 
 
         $.ajax({
@@ -204,7 +204,7 @@ $(document).ready(function() {
             data   : formdata, // Sending name/value pairs to server with the AJAX request (AJAX call)
             success: function(resp) { // if the AJAX request is successful
                 // Showing Validation Errors in the view (from the backend/server response of our AJAX request):
-                
+                console.log('respuesta ', resp);
                 if (resp.type == 'error') { // if there're Validation Errors (login fails), show the Validation Error Messages (each of them under its respective <input> field)    // 'type' is sent as a PHP array key (in the HTTP response from the server (backend)) from inside the userRegister() method in Front/UserController.php
                     // Hide our Preloader/Loader/Loading Page/Preloading Screen when there's an error    
                     $('.loader').hide();

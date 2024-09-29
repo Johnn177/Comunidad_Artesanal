@@ -126,7 +126,7 @@
                                                             <span class="order-span-quantity">x {{ $item['quantity'] }}</span>
                                                         </td>
                                                         <td>
-                                                            <h6 class="order-h6">EGP{{ $getDiscountAttributePrice['final_price'] * $item['quantity'] }}</h6> {{-- precio de todos los productos (después del descuento (si hay)) (= precio (después del descuento) * no. de productos) --}}
+                                                            <h6 class="order-h6">Bs.{{ $getDiscountAttributePrice['final_price'] * $item['quantity'] }}</h6> {{-- precio de todos los productos (después del descuento (si hay)) (= precio (después del descuento) * no. de productos) --}}
                                                         </td>
                                                     </tr>
 
@@ -142,7 +142,7 @@
                                                         <h3 class="order-h3">Subtotal</h3>
                                                     </td>
                                                     <td>
-                                                        <h3 class="order-h3">EGP{{ $total_price }}</h3>
+                                                        <h3 class="order-h3">Bs.{{ $total_price }}</h3>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -151,7 +151,7 @@
                                                     </td>
                                                     <td>
                                                         <h6 class="order-h6">
-                                                            <span class="shipping_charges">EGP0</span>
+                                                            <span class="shipping_charges">Bs.0</span>
                                                         </h6>
                                                     </td>
                                                 </tr>
@@ -163,9 +163,9 @@
                                                         <h6 class="order-h6">
                                                             
                                                             @if (\Illuminate\Support\Facades\Session::has('couponAmount')) {{-- Almacenamos 'couponAmount' en una variable de sesión dentro del método applyCoupon() en Front/ProductsController.php --}}
-                                                                <span class="couponAmount">EGP{{ \Illuminate\Support\Facades\Session::get('couponAmount') }}</span>
+                                                                <span class="couponAmount">Bs.{{ \Illuminate\Support\Facades\Session::get('couponAmount') }}</span>
                                                             @else
-                                                                EGP0
+                                                                Bs. 0
                                                             @endif
                                                         </h6>
                                                     </td>
@@ -176,7 +176,7 @@
                                                     </td>
                                                     <td>
                                                         <h6 class="order-h6">
-                                                            <span class="final_price">EGP{{ $total_price - \Illuminate\Support\Facades\Session::get('couponAmount') }}</span> {{-- precio total después de aplicar el cupón (si se aplica) --}}
+                                                            <span class="final_price">Bs.{{ $total_price - \Illuminate\Support\Facades\Session::get('couponAmount') }}</span> {{-- precio total después de aplicar el cupón (si se aplica) --}}
                                                         </h6>
                                                     </td>
                                                 </tr>
