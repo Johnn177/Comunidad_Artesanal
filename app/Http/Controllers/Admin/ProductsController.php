@@ -87,12 +87,13 @@ class ProductsController extends Controller
         // Correcting issues in the Skydash Admin Panel Sidebar using Session
         Session::put('page', 'products');
 
-
         if ($id == '') { // if there's no $id is passed in the route/URL parameters, this means 'Add a new product'
             $title = 'Add Product';
             $product = new \App\Models\Product();
             // dd($product);
             $message = 'Product added successfully!';
+
+           
         } else { // if the $id is passed in the route/URL parameters, this means Edit the Product
             $title = 'Edit Product';
             $product = Product::find($id);
@@ -223,6 +224,10 @@ class ProductsController extends Controller
                 } else {
                     $product->vendor_id = 0;
                 }
+                $lastId = Product::max('id');
+
+                // Sumar uno al último id
+                $id = $lastId + 1;
             }
 
 
@@ -266,6 +271,8 @@ class ProductsController extends Controller
             }
 
 
+
+            $product->id    = $id;
             $product->status = 1;
 
 
@@ -345,7 +352,8 @@ class ProductsController extends Controller
         return redirect()->back()->with('success_message', $message);
     }
 
-    public function addAttributes(Request $request, $id) { // Add/Edit Attributes function    
+    public function addAttributes(Request $request, $id) { // Add/Edit Attributes function  
+       // dd($request, $id);  
         Session::put('page', 'products');
 
         $product = Product::select('id', 'product_name', 'product_code', 'product_color', 'product_price', 'product_image')->with('attributes')->find($id); // with('attributes') is the relationship method name in the Product.php model
