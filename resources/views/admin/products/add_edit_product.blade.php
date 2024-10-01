@@ -8,7 +8,7 @@
                 <div class="col-md-12 grid-margin">
                     <div class="row">
                         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                            <h4 class="card-title">Products</h4>
+                            <h4 class="card-title">Productos</h4>
                         </div>
                         <div class="col-12 col-xl-4">
                             <div class="justify-content-end d-flex">
@@ -88,10 +88,10 @@
 
                                 
                                 <div class="form-group">
-                                    <label for="category_id">Select Category</label>
+                                    <label for="category_id">Seleccione Categoria</label>
                                     {{-- <input type="text" class="form-control" id="category_id" placeholder="Enter Category Name" name="category_id" @if (!empty($product['name'])) value="{{ $product['category_id'] }}" @else value="{{ old('category_id') }}" @endif>  --}} {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                     <select name="category_id" id="category_id" class="form-control text-dark">
-                                        <option value="">Select Category</option>
+                                        <option value="">Seleccionar Categoria</option>
                                         @foreach ($categories as $section) {{-- $categories are ALL the `sections` with their related 'parent' categories (if any (if exist)) and their subcategories or `child` categories (if any (if exist)) --}} {{-- Check ProductsController.php --}}
                                             <optgroup label="{{ $section['name'] }}"> {{-- sections --}}
                                                 @foreach ($section['categories'] as $category) {{-- parent categories --}} {{-- Check ProductsController.php --}}
@@ -105,6 +105,7 @@
                                         {{-- <option value="{{ $category['id'] }}" @if (!empty($product['category_id']) && $product['category_id'] == $category['id']) selected @endif >{{ $category['name'] }}</option> --}}
                                     </select>
                                 </div>
+
 
 
 

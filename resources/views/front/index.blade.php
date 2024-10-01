@@ -127,16 +127,16 @@
                                                 @if ($getDiscountPrice > 0) {{-- Si hay un descuento en el precio, mostrar el precio anterior (el precio original) y después (el nuevo precio) del descuento --}}
                                                     <div class="price-template">
                                                         <div class="item-new-price">
-                                                            Rs . {{ $getDiscountPrice }}
+                                                            Bs . {{ $getDiscountPrice }}
                                                         </div>
                                                         <div class="item-old-price">
-                                                            Rs . {{ $product['product_price'] }}
+                                                            Bs . {{ $product['product_price'] }}
                                                         </div>
                                                     </div>
                                                 @else {{-- si no hay descuento en el precio, mostrar el precio original --}}
                                                     <div class="price-template">
                                                         <div class="item-new-price">
-                                                            Rs . {{ $product['product_price'] }}
+                                                            Bs . {{ $product['product_price'] }}
                                                         </div>
                                                     </div>
                                                 @endif
@@ -208,16 +208,16 @@
                                                 @if ($getDiscountPrice > 0) {{-- Si hay un descuento en el precio, mostrar el precio anterior (el precio original) y después (el nuevo precio) del descuento --}}
                                                     <div class="price-template">
                                                         <div class="item-new-price">
-                                                            Rs . {{ $getDiscountPrice }}
+                                                            Bs . {{ $getDiscountPrice }}
                                                         </div>
                                                         <div class="item-old-price">
-                                                            Rs . {{ $product['product_price'] }}
+                                                            Bs . {{ $product['product_price'] }}
                                                         </div>
                                                     </div>
                                                 @else {{-- si no hay descuento en el precio, mostrar el precio original --}}
                                                     <div class="price-template">
                                                         <div class="item-new-price">
-                                                            Rs . {{ $product['product_price'] }}
+                                                            Bs . {{ $product['product_price'] }}
                                                         </div>
                                                     </div>
                                                 @endif
@@ -281,10 +281,10 @@
                                                 @endphp
                                                 <div class="price-template">
                                                     @if ($getDiscountPrice > 0)
-                                                        <div class="item-new-price">Rs . {{ $getDiscountPrice }}</div>
-                                                        <div class="item-old-price">Rs . {{ $product['product_price'] }}</div>
+                                                        <div class="item-new-price">Bs . {{ $getDiscountPrice }}</div>
+                                                        <div class="item-old-price">Bs . {{ $product['product_price'] }}</div>
                                                     @else
-                                                        <div class="item-new-price">Rs . {{ $product['product_price'] }}</div>
+                                                        <div class="item-new-price">Bs . {{ $product['product_price'] }}</div>
                                                     @endif
                                                 </div>
                                             </div>
@@ -345,10 +345,10 @@
                                                 @endphp
                                                 <div class="price-template">
                                                     @if ($getDiscountPrice > 0)
-                                                        <div class="item-new-price">Rs . {{ $getDiscountPrice }}</div>
-                                                        <div class="item-old-price">Rs . {{ $product['product_price'] }}</div>
+                                                        <div class="item-new-price">Bs . {{ $getDiscountPrice }}</div>
+                                                        <div class="item-old-price">Bs . {{ $product['product_price'] }}</div>
                                                     @else
-                                                        <div class="item-new-price">Rs . {{ $product['product_price'] }}</div>
+                                                        <div class="item-new-price">Bs . {{ $product['product_price'] }}</div>
                                                     @endif
                                                 </div>
                                             </div>

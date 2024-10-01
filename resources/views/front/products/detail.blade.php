@@ -204,7 +204,7 @@
 
                         {{-- Información del producto como código, color y disponibilidad --}}
                         <div class="section-4-sku-information u-s-p-y-14">
-                            <h6 class="information-heading u-s-m-b-8">Información SKU:</h6>
+                            <h6 class="information-heading u-s-m-b-8">Información :</h6>
                             <div class="left">
                                 <span>Código del Producto:</span>
                                 <span>{{ $productDetails['product_code'] }}</span> <!-- Mostrar código del producto -->

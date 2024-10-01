@@ -108,7 +108,7 @@
                                                             <span class="order-span-quantity">x {{ $item['quantity'] }}</span>
                                                         </td>
                                                         <td>
-                                                            <h6 class="order-h6">EGP{{ $getDiscountAttributePrice['final_price'] * $item['quantity'] }}</h6> {{-- precio de todos los productos (después del descuento (si lo hay)) (= precio (después del descuento) * número de productos) --}}
+                                                            <h6 class="order-h6">Bs.  {{ $getDiscountAttributePrice['final_price'] * $item['quantity'] }}</h6> {{-- precio de todos los productos (después del descuento (si lo hay)) (= precio (después del descuento) * número de productos) --}}
                                                         </td>
                                                     </tr>
 
@@ -121,7 +121,7 @@
                                                         <h3 class="order-h3">Subtotal</h3>
                                                     </td>
                                                     <td>
-                                                        <h3 class="order-h3">EGP{{ $total_price }}</h3>
+                                                        <h3 class="order-h3">Bs.  {{ $total_price }}</h3>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -141,7 +141,7 @@
                                                     <td>
                                                         <h6 class="order-h6">
                                                             @if (\Illuminate\Support\Facades\Session::has('couponAmount')) {{-- Almacenamos el 'couponAmount' en una Variable de Sesión dentro del método applyCoupon() en Front/ProductsController.php --}}
-                                                                <span class="couponAmount">EGP{{ \Illuminate\Support\Facades\Session::get('couponAmount') }}</span>
+                                                                <span class="couponAmount">Bs.  {{ \Illuminate\Support\Facades\Session::get('couponAmount') }}</span>
                                                             @else
                                                                 EGP0
                                                             @endif
@@ -154,7 +154,7 @@
                                                     </td>
                                                     <td>
                                                         <h3 class="order-h3">
-                                                            <strong class="grand_total">EGP{{ $total_price - \Illuminate\Support\Facades\Session::get('couponAmount') }}</strong> {{-- Creamos la clase CSS 'grand_total' para usarla como un manejador para AJAX dentro de la función    $('#applyCoupon').submit();    en front/js/custom.js --}} {{-- Almacenamos el 'couponAmount' en una Variable de Sesión dentro del método applyCoupon() en Front/ProductsController.php --}}
+                                                            <strong class="grand_total">Bs. {{ $total_price - \Illuminate\Support\Facades\Session::get('couponAmount') }}</strong> {{-- Creamos la clase CSS 'grand_total' para usarla como un manejador para AJAX dentro de la función    $('#applyCoupon').submit();    en front/js/custom.js --}} {{-- Almacenamos el 'couponAmount' en una Variable de Sesión dentro del método applyCoupon() en Front/ProductsController.php --}}
                                                         </h3>
                                                     </td>
                                                 </tr>

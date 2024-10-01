@@ -88,14 +88,14 @@ class ProductsController extends Controller
         Session::put('page', 'products');
 
         if ($id == '') { // if there's no $id is passed in the route/URL parameters, this means 'Add a new product'
-            $title = 'Add Product';
+            $title = 'Agregar Producto';
             $product = new \App\Models\Product();
             // dd($product);
-            $message = 'Product added successfully!';
+            $message = 'Producto agregado exitosamente!';
 
            
         } else { // if the $id is passed in the route/URL parameters, this means Edit the Product
-            $title = 'Edit Product';
+            $title = 'Editar Producto';
             $product = Product::find($id);
             // dd($product);
             $message = 'Product updated successfully!';

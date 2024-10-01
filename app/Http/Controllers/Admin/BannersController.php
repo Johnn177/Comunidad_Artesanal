@@ -72,12 +72,12 @@ class BannersController extends Controller
         // FIRSTLY, IF THE REQUEST METHOS IS 'GET', THEN RENDER THE add_edit_banner.blade.php PAGE:
         if ($id == '') { // if there's no $id passed in the route/URL parameters, this means 'Add a new Banner'
             $banner = new Banner;
-            $title = 'Add Banner Image';
+            $title = 'Añadir Imagen al Banner';
             $message = 'Banner added successfully!';
         } else { // if the $id is passed in the route/URL parameter, this means Edit (Update) the Banner
             $banner = Banner::find($id);
             // dd($banner);
-            $title = 'Edit Banner Image';
+            $title = 'Editar Imagen de Banner';
             $message = 'Banner updated successfully!';
         }
 
