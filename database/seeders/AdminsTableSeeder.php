@@ -23,7 +23,7 @@ class AdminsTableSeeder extends Seeder
         $adminRecords = [
             [
                 'id'        => 1,
-                'name'      => 'Ahmed Yahya',
+                'name'      => 'Artesano1',
                 'type'      => 'superadmin',
                 'vendor_id' => 0, // `vendor_id` is zero 0 because 'type' is not 'vendor' (it's actually 'superadmin')
                 'mobile'    => '9800000000',
