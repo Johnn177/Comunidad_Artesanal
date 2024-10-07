@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('countries', function (Blueprint $table) {
-            $table->id(); // Esto crea una columna 'id' autoincremental.
+            //$table->id(); // Esto crea una columna 'id' autoincremental.
+            $table->bigIncrements('id');
             $table->string('country_code', 2)->default('');
             $table->string('country_name', 100)->default('');
             $table->tinyInteger('status')->default(1);

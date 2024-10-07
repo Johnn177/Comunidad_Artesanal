@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +27,16 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
     // This a Route Group for routes that ALL start with 'admin/-something' and utilizes the 'admin' Authentication Guard    // Note: You must remove the '/admin'/ part from the routes that are written inside this Route Group (e.g.    Route::get('logout');    , NOT    Route::get('admin/logout');    )
     Route::group(['middleware' => ['admin']], function() { // using our 'admin' guard (which we created in auth.php)
+
+
+        
+
+        Route::get('admins/create', [AdminController::class, 'create'])->name('admins.create');
+        Route::post('admins/store', [AdminController::class, 'store'])->name('admins.store');
+
+
+
+
         Route::get('dashboard', 'AdminController@dashboard'); // Admin login
         Route::get('logout', 'AdminController@logout'); // Admin logout
         Route::match(['get', 'post'], 'update-admin-password', 'AdminController@updateAdminPassword'); // GET request to view the update password <form>, and a POST request to submit the update password <form>
@@ -37,7 +47,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         // Update the vendor's commission percentage (by the Admin) in `vendors` table (for every vendor on their own) in the Admin Panel in admin/admins/view_vendor_details.blade.php (Commissions module: Every vendor must pay a certain commission (that may vary from a vendor to another) for the website owner (admin) on every item sold, and it's defined by the website owner (admin))
         Route::post('update-vendor-commission', 'AdminController@updateVendorCommission');
 
-        Route::get('admins/{type?}', 'AdminController@admins'); // In case the authenticated user (logged-in user) is superadmin, admin, subadmin, vendor these are the three Admin Management URLs depending on the slug. The slug is the `type` column in `admins` table which can only be: superadmin, admin, subadmin, or vendor    // Used an Optional Route Parameters (or Optional Route Parameters) using a '?' question mark sign, for in case that there's no any {type} passed, the page will show ALL superadmins, admins, subadmins and vendors at the same page
+        Route::get('admins/{type?}', 'AdminController@admins')->name('admins.full'); // In case the authenticated user (logged-in user) is superadmin, admin, subadmin, vendor these are the three Admin Management URLs depending on the slug. The slug is the `type` column in `admins` table which can only be: superadmin, admin, subadmin, or vendor    // Used an Optional Route Parameters (or Optional Route Parameters) using a '?' question mark sign, for in case that there's no any {type} passed, the page will show ALL superadmins, admins, subadmins and vendors at the same page
         Route::get('view-vendor-details/{id}', 'AdminController@viewVendorDetails'); // View further 'vendor' details inside Admin Management table (if the authenticated user is superadmin, admin or subadmin)
         Route::post('update-admin-status', 'AdminController@updateAdminStatus'); // Update Admin Status using AJAX in admins.blade.php
     
@@ -111,7 +121,8 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         // Orders
         // Render admin/orders/orders.blade.php page (Orders Management section) in the Admin Panel
         Route::get('orders', 'OrderController@orders');
-
+        // Nueva ruta para rastrear pedido
+      //  Route::get('/user/orders/{id}', 'OrderController@trackOrder')->name('user.orders.track');
         // Render admin/orders/order_details.blade.php (View Order Details page) when clicking on the View Order Details icon in admin/orders/orders.blade.php (Orders tab under Orders Management section in Admin Panel)
         Route::get('orders/{id}', 'OrderController@orderDetails'); 
 
@@ -190,12 +201,12 @@ Route::namespace('App\Http\Controllers\Front')->group(function() {
 
     // Dynamic Routes for the `url` column in the `categories` table using a foreach loop    // Listing/Categories Routes
     // Important Note: When you run this Laravel project for the first time and if you're running  the "php artisan migrate" command for the first time, before that you must comment out the $catUrls variable and the following foreach loop in web.php file (routes file), because when we run that artisan command, by then the `categories` table has not been created yet, and this causes an error, so make sure to comment out this code in web.php file before running the "php artisan migrate" command for the first time.
-    /*$catUrls = \App\Models\Category::select('url')->where('status', 1)->get()->pluck('url')->toArray(); // Routes like: /men, /women, /shirts, ...
+    $catUrls = \App\Models\Category::select('url')->where('status', 1)->get()->pluck('url')->toArray(); // Routes like: /men, /women, /shirts, ...
     // dd($catUrls);
     foreach ($catUrls as $key => $url) {
         // Important Note: When you run this Laravel project for the first time and if you're running  the "php artisan migrate" command for the first time, before that you must comment out the $catUrls variable and the following foreach loop in web.php file (routes file), because when we run that artisan command, by then the `categories` table has not been created yet, and this causes an error, so make sure to comment out this code in web.php file before running the "php artisan migrate" command for the first time.
         Route::match(['get', 'post'], '/' . $url, 'ProductsController@listing'); // used match() for the HTTP 'GET' requests to render listing.blade.php page and the HTTP 'POST' method for the AJAX request of the Sorting Filter or the HTML Form submission and jQuery for the Sorting Filter WITHOUT AJAX, AND ALSO for submitting the Search Form in listing.blade.php    // e.g.    /men    or    /computers    // Important Note: When you run this Laravel project for the first time and if you're running  the "php artisan migrate" command for the first time, before that you must comment out the $catUrls variable and the following foreach loop in web.php file (routes file), because when we run that artisan command, by then the `categories` table has not been created yet, and this causes an error, so make sure to comment out this code in web.php file before running the "php artisan migrate" command for the first time.
-    }*/
+    }
 
 
     // Vendor Login/Register

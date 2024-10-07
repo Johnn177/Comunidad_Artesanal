@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('orders_products', function (Blueprint $table) {
-            $table->id();
-
+            //$table->id();
+            $table->bigIncrements('id');
             $table->integer('order_id');   // Foreign Key to the `orders`   table
             $table->integer('user_id');    // Foreign Key to the `users`    table
             $table->integer('vendor_id');  // Foreign Key to the `vendors`  table    // if the item/product seller is a Vendor, the value is 1 one, and if the item/product seller is an Admin, the value is 0 zero

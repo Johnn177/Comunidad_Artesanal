@@ -59,7 +59,7 @@ class BannersController extends Controller
         // Delete banner record from `banners` database table
         Banner::where('id', $id)->delete();
         
-        $message = 'Banner deleted successfully!';
+        $message = 'Banner eliminado exitosamente!';
         
         return redirect()->back()->with('success_message', $message);
     }

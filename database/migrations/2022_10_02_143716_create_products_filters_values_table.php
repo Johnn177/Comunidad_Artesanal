@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('products_filters_values', function (Blueprint $table) { // this table has a relationship with `products_filters` table
-            $table->id();
-
+            //$table->id();
+            $table->bigIncrements('id');
             //$table->string('filter_id');
             $table->integer('filter_id');
             $table->string('filter_value');

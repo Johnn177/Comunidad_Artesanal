@@ -49,7 +49,7 @@ class RatingController extends Controller
     public function deleteRating($id) { // Route Parameters: Required Parameters: https://laravel.com/docs/9.x/routing#required-parameters
         Rating::where('id', $id)->delete();
 
-        $message = 'Rating has been deleted successfully!';
+        $message = '¡La calificación se ha eliminado correctamente!';
         
 
         return redirect()->back()->with('success_message', $message);

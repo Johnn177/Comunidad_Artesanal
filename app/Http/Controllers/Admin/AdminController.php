@@ -24,9 +24,59 @@ use App\Models\VendorsBusinessDetail;
 use App\Models\VendorsBankDetail;
 use App\Models\Country;
 use Illuminate\Support\Facades\Hash;
-
+use Spatie\Permission\Models\Role; // Asegúrate de importar el modelo Role
 class AdminController extends Controller
 {
+
+
+    /************************** */
+    public function create()
+    {
+        // Obtener todos los roles disponibles
+        $roles = Role::all();
+        
+        return view('admin.admins.create', compact('roles'));
+    }
+    
+    public function store(Request $request)
+    {
+        
+        $tipo='Admin';
+       
+        $validated = $request->validate([
+            'name' => 'required',
+            //'type' => 'required',
+            'mobile' => 'required',
+            'email' => 'required|email|unique:admins',
+            'password' => 'required',
+            'roles' => 'required', // Validar que al menos un rol esté seleccionado
+        ]);
+        
+        // Crear el nuevo administrador
+        $admin = Admin::create([
+            'name' => $request->name,
+            'type' => $tipo,
+           // 'type' => $request->type,
+          /// 'vendor_id' => $request->type === 'vendor' ? $request->vendor_id : 0,
+            'vendor_id' => $tipo === 'vendor' ? $request->vendor_id : 0,
+            'mobile' => $request->mobile,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'image' => $request->image ?? null,
+            'confirm' => 'No',
+            'status' => 1,
+        ]);
+    
+        // Asignar roles seleccionados al administrador
+        $admin->syncRoles($request->roles);
+       
+        return redirect()->route('admins.full')->with('success', 'Administrador creado con éxito.');
+    }
+    
+
+    /************************** */
+
+
     public function dashboard() {
         // Correcting issues in the Skydash Admin Panel Sidebar using Session:
         Session::put('page', 'dashboard');
