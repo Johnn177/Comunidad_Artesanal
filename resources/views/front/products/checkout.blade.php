@@ -7,7 +7,7 @@
     <div class="page-style-a">
         <div class="container">
             <div class="page-intro">
-                <h2>Checkout</h2>
+                <h2>Pagar</h2>
                 <ul class="bread-crumb">
                     <li class="has-separator">
                         <i class="ion ion-md-home"></i>
@@ -130,7 +130,7 @@
                                                     </td>
                                                     <td>
                                                         <h6 class="order-h6">
-                                                            <span class="shipping_charges">EGP0</span>
+                                                            <span class="shipping_charges">Bs. 0</span>
                                                         </h6>
                                                     </td>
                                                 </tr>
@@ -143,7 +143,7 @@
                                                             @if (\Illuminate\Support\Facades\Session::has('couponAmount')) {{-- Almacenamos el 'couponAmount' en una Variable de Sesión dentro del método applyCoupon() en Front/ProductsController.php --}}
                                                                 <span class="couponAmount">Bs.  {{ \Illuminate\Support\Facades\Session::get('couponAmount') }}</span>
                                                             @else
-                                                                EGP0
+                                                                Bs. 0
                                                             @endif
                                                         </h6>
                                                     </td>
@@ -167,13 +167,13 @@
                                         </div>
                                         <div class="u-s-m-b-13 prepaidMethod"> {{-- Agregamos la clase CSS prepaidMethod para deshabilitar ese método de pago (ver front/js/custom.js) si el código PIN de la Dirección de Entrega de ese usuario no existe en nuestra tabla de base de datos `prepaid_pincodes` --}}
                                             <input type="radio" class="radio-box" name="payment_gateway" id="paypal" value="Paypal">
-                                            <label class="label-text" for="paypal">PayPal</label>
+                                            <label class="label-text" for="paypal">QR</label>
                                         </div>
 
                                         {{-- Integración de pasarela de pago iyzico en/con Laravel --}}
                                         <div class="u-s-m-b-13 prepaidMethod"> {{-- Agregamos la clase CSS prepaidMethod para deshabilitar ese método de pago (ver front/js/custom.js) si el código PIN de la Dirección de Entrega de ese usuario no existe en nuestra tabla de base de datos `prepaid_pincodes` --}}
                                             <input type="radio" class="radio-box" name="payment_gateway" id="iyzico" value="iyzico">
-                                            <label class="label-text" for="iyzico">Iyzico</label>
+                                            <label class="label-text" for="iyzico">Tarjeta de Crédito o Débito</label>
                                         </div>
                                         <div class="u-s-m-b-13">
     <input type="checkbox" class="check-box" id="accept" name="accept" value="Yes" title="Por favor, acepta los T&C">

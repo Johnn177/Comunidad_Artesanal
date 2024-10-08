@@ -760,7 +760,7 @@ class ProductsController extends Controller
                     ])->count();
 
                     if ($couponCount >= 1) { // if this 'Single Time' coupon code has been used/redeemed more than one single time by this user (this authenticated/logged-in user) (i.e. meaning that if that coupon code is already existing in the `orders` table and has been used/redeemed by this authenticated/logged-in user)
-                        $message = 'This coupon code is already availed by you!';
+                        $message = '¡Este código de cupón ya no está disponible para ti!';
                     }
                 }
 
@@ -773,7 +773,7 @@ class ProductsController extends Controller
 
                 foreach ($getCartItems as $key => $item) {
                     if (!in_array($item['product']['category_id'], $catArr)) { // if the category of one of the products in the Cart doesn't belong to the Coupon's categories (the categories of the coupon selected by 'vendor' or 'admin' in the Admin Panel for the coupon)
-                        $message = 'This coupon code selected categories is not for one of the selected products category!';
+                        $message = 'Las categorías seleccionadas de este código de cupón no son para una de las categorías de productos seleccionadas.!';
                     }
 
                     
@@ -796,7 +796,7 @@ class ProductsController extends Controller
     
                         foreach ($getCartItems as $item) {
                             if (!in_array($item['user_id'], $usersId)) { // if the user id of one of the products in the Cart doesn't belong to the Coupon's specifically selected users (to check if the submitted coupon code is available to the user submitting it or not)
-                                $message = 'This coupon code is not available for you! Try again with a valid coupon code! (The coupon code is available only for certain selected users!)';
+                                $message = '¡Este código de cupón no está disponible para usted! ¡Inténtalo de nuevo con un código de cupón válido! (¡El código de cupón está disponible solo para ciertos usuarios seleccionados!)';
                             }
                         }
                     }
@@ -811,7 +811,7 @@ class ProductsController extends Controller
 
                     foreach ($getCartItems as $item) {
                         if (!in_array($item['product']['id'], $productIds)) { // if the user id of one of the products in the Cart doesn't belong to the products ids of that vendor (to check if the submitted coupon code pertains to that specific/very vendor or not)
-                            $message = 'This coupon code is not available for you! Try again with a valid coupon code! (vendor validation)!. The coupon code exists but one of the products in the Cart doesn\'t belong to that specific vendor who created/owns that Coupon!';
+                            $message = '¡Este código de cupón no está disponible para usted! ¡Inténtalo de nuevo con un código de cupón válido! (validación de proveedor)!. El código de cupón existe, pero uno de los productos en el carrito no pertenece al proveedor específico que creó o es propietario de ese cupón.';
                         }
                     }
                 }
@@ -847,7 +847,7 @@ class ProductsController extends Controller
                     Session::put('couponAmount', $couponAmount);
                     Session::put('couponCode'  , $data['code']); // $data['code'] comes from the 'data' object sent from inside the $.ajax() method in front/js/custom.js file
 
-                    $message = 'Coupon Code successfully applied. You are availing discount!';
+                    $message = 'Código de cupón aplicado correctamente. ¡Estás aprovechando el descuento!';
 
 
                     return response()->json([ // JSON Responses: https://laravel.com/docs/9.x/responses#json-responses
@@ -970,7 +970,7 @@ class ProductsController extends Controller
 
             // Agree to T&C (Accept Terms and Conditions) Validation
             if (empty($data['accept'])) { // if the user doesn't select a Delivery Address
-                $message = 'Please agree to T&C!';
+                $message = '¡Acepte los términos y condiciones!';
 
                 return redirect()->back()->with('error_message', $message);
             }

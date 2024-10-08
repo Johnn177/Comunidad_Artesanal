@@ -35,7 +35,7 @@
                                             <th>Imagen del Producto</th>
                                             <th>Categoría</th> {{-- A través de la relación --}}
                                             <th>Sección</th>  {{-- A través de la relación --}}
-                                            <th>Agregado por</th> {{-- A través de la relación --}}
+                                            <!--th>Agregado por</th--> {{-- A través de la relación --}}
                                             <th>Estado</th>
                                             <th>Acciones</th>
                                         </tr>
@@ -56,13 +56,13 @@
                                                 </td>
                                                 <td>{{ $product['category']['category_name'] }}</td> {{-- A través de la relación --}}
                                                 <td>{{ $product['section']['name'] }}</td> {{-- A través de la relación --}}
-                                                <td>
+                                                <!--td>
                                                     @if ($product['admin_type'] == 'vendor')
                                                         <a target="_blank" href="{{ url('admin/view-vendor-details/' . $product['admin_id']) }}">{{ ucfirst($product['admin_type']) }}</a>
                                                     @else
                                                         {{ ucfirst($product['admin_type']) }}
                                                     @endif
-                                                </td>
+                                                </td-->
                                                 <td>
                                                     @if ($product['status'] == 1)
                                                         <a class="updateProductStatus" id="product-{{ $product['id'] }}" product_id="{{ $product['id'] }}" href="javascript:void(0)"> {{-- Usando atributos personalizados HTML. Ver admin/js/custom.js --}}

@@ -31,7 +31,8 @@
                         @csrf {{-- Previniendo Solicitudes CSRF: https://laravel.com/docs/9.x/csrf#preventing-csrf-requests --}}
 
                         <input type="hidden" name="amount" value="{{ round(Session::get('grand_total') / 80, 2) }}"> {{-- 'grand_total' fue almacenado en la Sesión en el método checkout() en Front/ProductsController.php --}} {{-- Interactuando con la Sesión: Recuperando Datos: https://laravel.com/docs/9.x/session#retrieving-data --}} {{-- Nota: PayPal acepta SOLO las principales divisas del mundo, por lo que dividimos INR por 80 para convertir INR a USD --}}
-                        <input type="image" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-large.png">
+                      
+                        <img src="{{ asset('front/images/qr/Qr.jpeg')}}" alt="QR">
                     </form>
                 </div>
             </div>
