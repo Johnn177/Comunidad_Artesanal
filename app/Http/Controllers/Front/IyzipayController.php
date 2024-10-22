@@ -5,6 +5,12 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
+
+use App\Models\Order;
+use App\Models\ProductsAttribute;
+
+use Omnipay\Omnipay;
 
 class IyzipayController extends Controller
 {
@@ -25,6 +31,7 @@ class IyzipayController extends Controller
 
     // Make an iyzipay payment (redirect the user to iyzico payment gateway with the order details)    
     public function pay() {
+        return redirect('thanks'); //AGREGADO PARA QUE FUNCIONE LA PAGINA 20/10/2024 Johnn
         // dd(Session::get('order_id')); // 'order_id' was stored in the Session in checkout() method in Front/ProductsController.php    // Interacting With The Session: Retrieving Data: https://laravel.com/docs/9.x/session#retrieving-data
         $orderDetails = \App\Models\Order::with('orders_products')->where('id', Session::get('order_id'))->first()->toArray(); // Eager Loading: https://laravel.com/docs/9.x/eloquent-relationships#eager-loading    // 'order_id' was stored in the Session in checkout() method in Front/ProductsController.php    // Interacting With The Session: Retrieving Data: https://laravel.com/docs/9.x/session#retrieving-data
         // dd($orderDetails);

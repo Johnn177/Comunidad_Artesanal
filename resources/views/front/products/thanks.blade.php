@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-lg-12" align="center">
                     <h3>SU PEDIDO HA SIDO REALIZADO CON ÉXITO</h3>
-                    <p>Su número de pedido es {{ Session::get('order_id') }} y el total es INR {{ Session::get('grand_total') }}</p> {{-- El número de pedido es el `id` del pedido en la tabla `orders` de la base de datos. Almacenamos el id del pedido en la sesión en el método checkout() en Front/ProductsController.php --}} {{-- Recuperación de Datos: https://laravel.com/docs/10.x/session#retrieving-data --}}
+                    <p>Su número de pedido es {{ Session::get('order_id') }} y el total es BS. {{ Session::get('grand_total') }}</p> {{-- El número de pedido es el `id` del pedido en la tabla `orders` de la base de datos. Almacenamos el id del pedido en la sesión en el método checkout() en Front/ProductsController.php --}} {{-- Recuperación de Datos: https://laravel.com/docs/10.x/session#retrieving-data --}}
                 </div>
             </div>
         </div>

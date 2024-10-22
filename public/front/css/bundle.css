@@ -27,7 +27,7 @@ a {
     outline: none; }
 
 a:not([href]):not([tabindex]) {
-  color: #292929;
+  color: #f2f2f2;
   cursor: pointer; }
   a:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {
     color: #d90429; }
@@ -175,7 +175,7 @@ body {
  * Includes support for styling links too.
  */
 .u-c-brand {
-  color: #3f0000 !important; }
+  color: #a66953 !important; }
 
 /*--------------------------------------------------------------
 5.0 Vendor Extensions
@@ -505,7 +505,7 @@ body {
     position: relative;
     height: 52px;
     line-height: 52px;
-    background: #3f0000;
+    background: #a66953;
     border-radius: 8px 8px 0 0;
     color: #ffffff;
     cursor: pointer;
@@ -819,7 +819,7 @@ body {
     outline: 0; }
 
 .button-primary {
-  background: #3f0000;
+  background: #a66953;
   font-weight: 700;
   color: #ffffff; }
   .button-primary:hover {
@@ -916,12 +916,13 @@ body {
     .g-nav > li > a {
       display: block;
       font-size: 13px;
-      padding: 14px 10px; }
+      padding: 14px 10px;
+      color: #f2f2f2; }
       .g-nav > li > a > i.fas.fa-chevron-down {
         font-size: 6px;
         color: #aeaeae; }
     .g-nav > li:hover > a:first-child {
-      color: #d90429; }
+      color: #d99a25; }
       .g-nav > li:hover > a:first-child + .g-dropdown {
         opacity: 1;
         visibility: visible;
@@ -1683,7 +1684,7 @@ body {
 --------------------------------------------------------------*/
 /* 7.1 Top-Header */
 .full-layer-outer-header {
-  background-color: #ffffff;
+  background-color: #d95436;
   border-bottom: 1px solid #DCDCDD; }
 
 .primary-nav {
@@ -1966,7 +1967,8 @@ body {
     padding: 15px 0;
     font-size: 14px;
     position: relative;
-    font-weight: bold; }
+    font-weight: bold; 
+    color:#727272}
   .bottom-nav > li + li {
     margin-left: 32px; }
 
@@ -2048,10 +2050,12 @@ body {
 
 /* 8.2 Mid-Footer */
 .mid-footer-wrapper {
-  border-bottom: 1px solid #DCDCDD; }
+  border-bottom: 1px solid #DCDCDD; 
+  background-color: #a66953;}
 
 .footer-list h6 {
-  font-weight: 600; }
+  font-weight: 600; 
+  color: #f2f2f2}
 
 .footer-list ul {
   margin: 0;
@@ -2060,9 +2064,9 @@ body {
   font-size: 13px; }
   .footer-list ul > li > a {
     font-size: 13px;
-    color: #707070; }
+    color: #f2f2f2; }
     .footer-list ul > li > a:hover {
-      color: #d90429; }
+      color: #d99a25; }
 
 /* 8.3 Bottom-Footer */
 .bottom-footer-wrapper {
@@ -3433,7 +3437,8 @@ body {
   /* 7.1 Top-Header */
   .primary-nav, .secondary-nav {
     text-align: center;
-    float: none; }
+    float: none; 
+    background-color: #D95436; }
   /* 7.2 Mid-Header */
   .mid-nav {
     text-align: right; }

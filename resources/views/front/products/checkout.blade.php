@@ -170,10 +170,10 @@
                                             <label class="label-text" for="paypal">QR</label>
                                         </div>
 
-                                        {{-- Integración de pasarela de pago iyzico en/con Laravel --}}
+                                        {{-- Integración de pasarela de pago iyzipay en/con Laravel --}}
                                         <div class="u-s-m-b-13 prepaidMethod"> {{-- Agregamos la clase CSS prepaidMethod para deshabilitar ese método de pago (ver front/js/custom.js) si el código PIN de la Dirección de Entrega de ese usuario no existe en nuestra tabla de base de datos `prepaid_pincodes` --}}
-                                            <input type="radio" class="radio-box" name="payment_gateway" id="iyzico" value="iyzico">
-                                            <label class="label-text" for="iyzico">Tarjeta de Crédito o Débito</label>
+                                            <input type="radio" class="radio-box" name="payment_gateway" id="iyzipay" value="iyzipay">
+                                            <label class="label-text" for="iyzipay">Tarjeta de Crédito o Débito</label>
                                         </div>
                                         <div class="u-s-m-b-13">
     <input type="checkbox" class="check-box" id="accept" name="accept" value="Yes" title="Por favor, acepta los T&C">

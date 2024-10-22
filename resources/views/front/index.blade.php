@@ -431,6 +431,24 @@
             </div>
         </div>
     </section>
+    <div class="outer-footer-wrapper u-s-p-y-80">
+            <h6>
+                Para ofertas especiales y otra información de descuentos
+            </h6>
+            <h1>
+                Suscríbete a Nuestro Boletín
+            </h1>
+            <p>
+                Suscríbete a la lista de correo para recibir actualizaciones sobre promociones, nuevos llegados, descuentos y cupones.
+            </p>
+
+            <form class="newsletter-form">
+                <label class="sr-only" for="subscriber_email">Ingresa tu Email</label>
+                <input type="text" placeholder="Tu Dirección de Email" id="subscriber_email" name="subscriber_email" required> {{-- Usaremos el atributo id global de HTML en jQuery en front/js/custom.js --}} 
+                <button type="button" class="button" onclick="addSubscriber()">ENVIAR</button> {{-- Verifica la función addSubscriber() en front/js/custom.js. La utilizaremos junto con el id="subscriber_email" del campo <input> --}}
+            </form>
+
+        </div>
 
 
     <!-- Site-Priorities /- -->

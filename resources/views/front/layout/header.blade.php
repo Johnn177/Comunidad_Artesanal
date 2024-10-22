@@ -16,12 +16,12 @@ $sections = \App\Models\Section::sections();
                     <li>
                         <a href="tel:+201255845857">
                         <i class="fas fa-phone u-c-brand u-s-m-r-9"></i>
-                        Teléfono: +201255845857</a>
+                        Teléfono: +591 73069385</a>
                     </li>
                     <li>
                         <a href="mailto:info@multi-vendore-commerce.com">
                         <i class="fas fa-envelope u-c-brand u-s-m-r-9"></i>
-                        Correo Electrónico: info@multi-vendore-commerce.com
+                        Correo Electrónico: Comunidad_Artesanal_Bo@gmail.com
                         </a>
                     </li>
                 </ul>

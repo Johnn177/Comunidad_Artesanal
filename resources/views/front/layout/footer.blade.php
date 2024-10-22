@@ -1,29 +1,10 @@
 <!-- Footer -->
 <footer class="footer">
-    <div class="container">
-        <!-- Outer-Footer -->
-        <div class="outer-footer-wrapper u-s-p-y-80">
-            <h6>
-                Para ofertas especiales y otra información de descuentos
-            </h6>
-            <h1>
-                Suscríbete a Nuestro Boletín
-            </h1>
-            <p>
-                Suscríbete a la lista de correo para recibir actualizaciones sobre promociones, nuevos llegados, descuentos y cupones.
-            </p>
-
-            <form class="newsletter-form">
-                <label class="sr-only" for="subscriber_email">Ingresa tu Email</label>
-                <input type="text" placeholder="Tu Dirección de Email" id="subscriber_email" name="subscriber_email" required> {{-- Usaremos el atributo id global de HTML en jQuery en front/js/custom.js --}} 
-                <button type="button" class="button" onclick="addSubscriber()">ENVIAR</button> {{-- Verifica la función addSubscriber() en front/js/custom.js. La utilizaremos junto con el id="subscriber_email" del campo <input> --}}
-            </form>
-
-        </div>
-        <!-- Outer-Footer /- -->
-        
+    
         <!-- Mid-Footer -->
         <div class="mid-footer-wrapper u-s-p-b-80">
+        <div class="container">
+            <br>
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-12">
                     <div class="footer-list">
@@ -75,20 +56,22 @@
                         <h6>Contacto</h6>
                         <ul>
                             <li>
+                                <a>
                                 <i class="fas fa-location-arrow u-s-m-r-9"></i>
-                                <span>Aplicación de Comercio Electrónico Multivendedor</span>
+                                <span>Comunidad Artesanal Bolivia</span>
+                                </a>
                             </li>
                             <li>
                                 <a href="tel:+201255845857">
                                 <i class="fas fa-phone u-s-m-r-9"></i>
-                                <span>+01255845857</span>
+                                <span>+591 73069385</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="mailto:info@multi-vendore-commerce.com">
                                 <i class="fas fa-envelope u-s-m-r-9"></i>
                                 <span>
-                                info@multi-vendore-commerce.com</span>
+                                Comunidad_Artesanal_Bo@gmail.com</span>
                                 </a>
                             </li>
                         </ul>
@@ -97,8 +80,9 @@
             </div>
         </div>
         <!-- Mid-Footer /- -->
-        
+    </div>
         <!-- Bottom-Footer -->
+    <div class="container">
         <div class="bottom-footer-wrapper">
             <div class="social-media-wrapper">
                 <ul class="social-media-list">
